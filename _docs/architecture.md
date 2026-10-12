@@ -3,8 +3,8 @@
 ## Selected stack
 
 The user selected Django after comparing Django and Flask. Use:
-- Python 3.11 or newer, within Django 5.2's supported Python versions.
-- Django 5.2 LTS, initially pinning `Django==5.2.18` in `requirements.txt` during bootstrap.
+- Python 3.11–3.14, within [Django 5.2's supported Python versions](https://docs.djangoproject.com/en/5.2/faq/install/#what-python-version-can-i-use-with-django). Bootstrap was verified with Python 3.12.14; other supported versions are not yet tested here.
+- Django 5.2 LTS, pinned to `Django==5.2.18` in `requirements.txt` during bootstrap.
 - SQLite for this local academic MVP.
 - Django templates and plain CSS for pages.
 - Django's built-in authentication, session, password validation, and CSRF facilities.

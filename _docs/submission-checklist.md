@@ -2,7 +2,9 @@
 
 ## Preparation status
 
-Product brainstorming and stack selection have been completed. Documentation and issue drafts have been prepared. The six live GitHub issues now exist. Application code, implementation, and QA are pending.
+Product brainstorming and stack selection have been completed. Documentation and issue drafts have been prepared. The six live GitHub issues exist. Bootstrap #1 is implemented and engineer-tested locally; its independent QA and publication, plus feature implementation #2–#6, remain pending.
+
+The Moodle screenshot supplied by the user displays **Tuesday, 13 October 2026, 14:30**. It does not show the timezone. The planning assumption is **Asia/Almaty (UTC+05:00)**, or `2026-10-13T09:30:00Z`; Moodle's displayed deadline remains authoritative. See `_docs/decisions.md`. Final deadline compliance is not yet established.
 
 ## Before implementation
 
@@ -11,11 +13,12 @@ Product brainstorming and stack selection have been completed. Documentation and
 - [x] Compare and select the technology stack.
 - [x] Prepare the initial backlog.
 - [x] Prepare agent, process, role, testing, design, and route documents.
-- [ ] Record the exact course deadline and timezone.
+- [x] Record the displayed course deadline and explicit planning timezone assumption.
+- [ ] Confirm the authoritative Moodle timezone.
 - [x] Create or select the actual public GitHub repository: https://github.com/allfocusSS/studytrack.
 - [x] Push the preparation documents.
 - [x] Create all six actual MVP issues and record their links in `_docs/issues/index.md`.
-- [ ] PM-groom the next live issue.
+- [x] PM-groom bootstrap live issue #1. Later issues require their own grooming.
 
 ## Before submission
 
