@@ -6,7 +6,7 @@ The filename `chat-brainstrom.md` follows the spelling used in the assignment.
 
 ## 1. User
 
-че мне надо делать
+что мне надо сделать
 
 ## 2. Assistant
 
@@ -19,9 +19,7 @@ The filename `chat-brainstrom.md` follows the spelling used in the assignment.
 
 **Сейчас начинаем с обсуждения идеи.** Предлагаю **StudyTrack — трекер университетских заданий**: добавляешь задание, предмет, дедлайн и отмечаешь выполнение. Эту переписку потом сохраним как историю brainstorming.
 
-Я задаю по одному вопросу, ты отвечаешь. После этого подготовим требования и перейдём к GitHub.
-
-**Первый вопрос: приложение будет для одного студента без регистрации или нужны аккаунты для разных студентов?** Рекомендую первый вариант — для этого задания он проще.
+**Первый вопрос: приложение будет для одного студента без регистрации или нужны аккаунты для разных студентов?** 
 
 ## 3. User
 
@@ -32,8 +30,6 @@ The filename `chat-brainstrom.md` follows the spelling used in the assignment.
 Фиксируем: **у каждого студента отдельный аккаунт**, с регистрацией, входом и выходом.
 
 **Следующий вопрос:** студент видит только свои задания или нужен общий список заданий для группы?
-
-Для первой версии рекомендую **только свои задания** — так проще реализовать и проверить права доступа.
 
 ## 5. User
 
@@ -57,8 +53,6 @@ The filename `chat-brainstrom.md` follows the spelling used in the assignment.
 
 **Следующий вопрос:** студент регистрируется по **логину и паролю** или по **email и паролю**?
 
-Рекомендую логин и пароль — для первой версии этого достаточно.
-
 ## 9. User
 
 по логину и паролю
@@ -69,7 +63,6 @@ The filename `chat-brainstrom.md` follows the spelling used in the assignment.
 
 **Последний вопрос по основным функциям:** дедлайн обязателен или можно создавать задания без даты и добавлять её позже?
 
-Рекомендую разрешить задания без даты — иногда преподаватель сообщает дедлайн позже.
 
 ## 11. User
 
@@ -81,8 +74,8 @@ The filename `chat-brainstrom.md` follows the spelling used in the assignment.
 
 Подготовил первую часть задания:
 
-- [plan.md](sandbox:/workspace/scratch/5919f41ce139/studytrack/_docs/plan.md) — требования на английском.
-- [chat-brainstrom.md](sandbox:/workspace/scratch/5919f41ce139/studytrack/chat-brainstrom.md) — реальная переписка с обсуждением идеи.
+- [plan.md](sandbox:/workspace/scratch/5919f41ce139/studytrack/_docs/plan.md)
+- [chat-brainstrom.md](sandbox:/workspace/scratch/5919f41ce139/studytrack/chat-brainstrom.md) 
 
 Теперь выбираем технологии:
 
@@ -90,8 +83,6 @@ The filename `chat-brainstrom.md` follows the spelling used in the assignment.
 |---|---|
 | **Python + Django + SQLite** | Django предоставляет готовые средства для входа, сессий и хранения паролей. genui{"citation":{"ref":"turn4view0"}} |
 | **Python + Flask + SQLite** | Логику регистрации и входа можно написать самостоятельно, как в официальном руководстве. genui{"citation":{"ref":"turn5view0"}} |
-
-**Рекомендую Django** — для нашего приложения с аккаунтами он удобнее.
 
 **Выбираешь Django или Flask?**
 
