@@ -1,8 +1,8 @@
 # Initial Backlog
 
-Status: initial local backlog, not transferred to GitHub yet. These are local task IDs, not GitHub issue numbers. The accompanying issue bodies are drafts pending live PM grooming.
+Status: historical initial backlog, transferred to GitHub on 2026-10-12. GitHub issues are the only active backlog. These descriptions record the original decomposition before live PM grooming.
 
-After transfer, GitHub issues become the only active backlog; retain this file as a historical snapshot for grading and record the actual links in `_docs/issues/index.md`.
+Actual issue links are in [_docs/issues/index.md](issues/index.md). Read the live issues for current criteria, not these historical drafts.
 
 ## 1. Bootstrap Django with a passing test
 Goal: A reproducible empty Django application starts and has a passing smoke test.

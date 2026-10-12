@@ -6,7 +6,7 @@ A university assignment tracker with separate student accounts, private task lis
 
 This repository preparation contains the product specification, real brainstorming transcript, selected architecture, agent instructions, initial backlog, and detailed issue drafts.
 
-Application implementation, actual GitHub issue creation, and independent QA are still pending. This is not a completed submission.
+Six [live GitHub issues](https://github.com/allfocusSS/studytrack/issues) were created before implementation. Application implementation and independent QA are pending. This is not a completed submission.
 
 ## Selected stack
 
@@ -28,7 +28,7 @@ The singular `AGENT.md`, root `process.md`, and `roles/` files are compatibility
 
 ## Repository and workflow
 
-Repository: https://github.com/allfocusSS/studytrack. The user created this public repository before implementation. Preparation documents and six real issues are being transferred before the first code task. The exact course deadline still needs to be supplied.
+Repository: https://github.com/allfocusSS/studytrack. The user created this public repository before implementation. Preparation documents are published, and six real issues were created before the first code task. The exact course deadline still needs to be supplied.
 
 PM, engineer, and QA comments must describe work actually performed. Close issues only after QA PASS and before the grading deadline.
 

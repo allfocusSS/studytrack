@@ -1,16 +1,14 @@
-# GitHub Issue Drafts
+# GitHub Backlog
 
-These files are prepared issue bodies. They are not live GitHub issues, completed implementation, or QA reports.
+GitHub issues are the only active backlog. Adjacent issue files are historical pre-grooming drafts; implementation and QA evidence live in the real issue threads.
 
-| Local task | Draft | Actual issue URL |
+| Local task | Historical draft | Live issue |
 | --- | --- | --- |
-| 1 | [Bootstrap](01-bootstrap.md) | Not created |
-| 2 | [Accounts](02-accounts.md) | Not created |
-| 3 | [Assignments](03-assignments.md) | Not created |
-| 4 | [Status](04-status.md) | Not created |
-| 5 | [Filters](05-filters.md) | Not created |
-| 6 | [Integration](06-integration.md) | Not created |
+| 1 | [01-bootstrap.md](01-bootstrap.md) | [#1](https://github.com/allfocusSS/studytrack/issues/1) |
+| 2 | [02-accounts.md](02-accounts.md) | [#2](https://github.com/allfocusSS/studytrack/issues/2) |
+| 3 | [03-assignments.md](03-assignments.md) | [#3](https://github.com/allfocusSS/studytrack/issues/3) |
+| 4 | [04-status.md](04-status.md) | [#4](https://github.com/allfocusSS/studytrack/issues/4) |
+| 5 | [05-filters.md](05-filters.md) | [#5](https://github.com/allfocusSS/studytrack/issues/5) |
+| 6 | [06-integration.md](06-integration.md) | [#6](https://github.com/allfocusSS/studytrack/issues/6) |
 
-Create issues before implementation, using these draft bodies. Record the returned real URLs and numbers in the table, then replace task-ID references in prerequisites and Out of scope with actual issue links.
-
-A PM subagent must review/groom each live issue before its engineer starts. Do not post fake PM, engineer, or QA comments while transferring these files.
+All six issues were created on 2026-10-12 before implementation. The exact course deadline is unknown; deadline compliance has not been claimed.

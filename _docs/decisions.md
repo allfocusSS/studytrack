@@ -27,8 +27,8 @@ The real conversation is preserved in `chat-brainstrom.md`. Product defaults tha
 - Authenticated GitHub account observed during preparation: `allfocusSS`.
 - Project repository: https://github.com/allfocusSS/studytrack (public; provided by the user).
 - Course deadline: not supplied.
-- Live GitHub issues: not created.
-- Implementation and QA: not performed.
+- Live GitHub issues: [#1](https://github.com/allfocusSS/studytrack/issues/1), [#2](https://github.com/allfocusSS/studytrack/issues/2), [#3](https://github.com/allfocusSS/studytrack/issues/3), [#4](https://github.com/allfocusSS/studytrack/issues/4), [#5](https://github.com/allfocusSS/studytrack/issues/5), [#6](https://github.com/allfocusSS/studytrack/issues/6). Created on 2026-10-12 before implementation.
+- Implementation and QA: pending; every issue follows PM → engineer → independent QA.
 
 Replace the missing repository and deadline with the user's actual values. Preserve the history of meaningful decisions; do not invent dates or issue numbers.
 

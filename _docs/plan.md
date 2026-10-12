@@ -138,7 +138,8 @@ The assignment spells the transcript filename as `chat-brainstrom`, so that spel
 - Technology stack: Django + SQLite selected by the user after comparing Django and Flask.
 - Agent/process/role documentation and six detailed issue drafts: prepared locally.
 - Public GitHub repository: https://github.com/allfocusSS/studytrack, created by the user.
-- Code, automated tests, and GitHub issues: not created yet.
+- GitHub issues: six live issues created before implementation; links in `_docs/issues/index.md`.
+- Application code and automated tests: not implemented yet.
 - Issue implementation and QA: not performed yet.
 - Course deadline: not supplied. Record the exact deadline and timezone before starting the issue workflow; counted issues must be opened and closed before it.
 

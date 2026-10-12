@@ -2,7 +2,7 @@
 
 ## Preparation status
 
-Product brainstorming and stack selection have been completed. Documentation and issue drafts have been prepared. Code, live GitHub issues, implementation, and QA have not yet been completed.
+Product brainstorming and stack selection have been completed. Documentation and issue drafts have been prepared. The six live GitHub issues now exist. Application code, implementation, and QA are pending.
 
 ## Before implementation
 
@@ -13,8 +13,8 @@ Product brainstorming and stack selection have been completed. Documentation and
 - [x] Prepare agent, process, role, testing, design, and route documents.
 - [ ] Record the exact course deadline and timezone.
 - [x] Create or select the actual public GitHub repository: https://github.com/allfocusSS/studytrack.
-- [ ] Push the preparation documents.
-- [ ] Create all six actual MVP issues and record their links.
+- [x] Push the preparation documents.
+- [x] Create all six actual MVP issues and record their links in `_docs/issues/index.md`.
 - [ ] PM-groom the next live issue.
 
 ## Before submission
