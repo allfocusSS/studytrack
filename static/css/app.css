@@ -61,6 +61,10 @@ input[aria-invalid="true"] { border-color: #b42318; }
 .badge-completed { background: #e8f5ed; color: #23623d; }
 .badge-overdue { background: #fff5f4; color: #b42318; }
 .status-form { margin: 0; }
+.filter-form { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; margin-bottom: 24px; }
+.filter-form .form-field { flex: 1 1 220px; margin: 0; }
+.filter-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.active-filter { flex-basis: 100%; margin: 0; overflow-wrap: anywhere; }
 .assignment-form { max-width: 680px; margin: 0 auto; overflow-wrap: anywhere; }
 .button-danger { background: #b42318; border-color: #b42318; }
 .button-danger:hover { background: #8f1c13; border-color: #8f1c13; }

@@ -5,6 +5,29 @@
     <div><p class="eyebrow">Your study work</p><h1>My assignments</h1></div>
     <a class="button" href="{% url 'assignments:create' %}">Add assignment</a>
   </div>
+  <form method="get" action="{% url 'assignments:list' %}" class="panel filter-form">
+    <div class="form-field">
+      <label for="filter-status">Status</label>
+      <select id="filter-status" name="status">
+        <option value="all" {% if status_filter == "all" %}selected{% endif %}>All</option>
+        <option value="pending" {% if status_filter == "pending" %}selected{% endif %}>Not completed</option>
+        <option value="completed" {% if status_filter == "completed" %}selected{% endif %}>Completed</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="filter-subject">Subject</label>
+      <select id="filter-subject" name="subject">
+        <option value="">All subjects</option>
+        {% for subject in subjects %}<option value="{{ subject }}" {% if subject_filter == subject %}selected{% endif %}>{{ subject }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="filter-actions">
+      <button class="button" type="submit">Apply filters</button>
+      <a class="button button-secondary" href="{% url 'assignments:list' %}">Clear filters</a>
+    </div>
+    {% if subject_filter %}<p class="active-filter">Active subject: {{ subject_filter }}</p>{% endif %}
+  </form>
+  {% if filter_error %}<div class="form-errors" role="alert"><h2>Check your filters</h2><p>{{ filter_error }}</p></div>{% else %}
   {% for assignment in assignments %}
     <article class="panel assignment-card">
       <h2>{{ assignment.title }}</h2>
@@ -27,9 +50,16 @@
     </article>
   {% empty %}
     <section class="panel empty-state">
+      {% if has_filters %}
+      <h2>No assignments match your filters</h2>
+      <p>Try another subject or status, or clear your filters.</p>
+      <a class="button" href="{% url 'assignments:list' %}">Clear filters</a>
+      {% else %}
       <h2>No assignments yet</h2>
       <p>Add your first assignment to start keeping track of your study work.</p>
       <a class="button" href="{% url 'assignments:create' %}">Add assignment</a>
+      {% endif %}
     </section>
   {% endfor %}
+  {% endif %}
 {% endblock %}
