@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}StudyTrack — Home{% endblock %}
+{% block content %}
+  <section class="panel hero">
+    <p class="eyebrow">Your study space</p>
+    {% if user.is_authenticated %}
+      <h1>Welcome, {{ user.username }}.</h1>
+      <p class="lead">You're signed in to StudyTrack.</p>
+    {% else %}
+      <h1>A place for your study work.</h1>
+      <p class="lead">Welcome to StudyTrack. Create your account to get started, or log in if you already have one.</p>
+      <div class="actions">
+        <a class="button" href="{% url 'accounts:register' %}">Register</a>
+        <a class="button button-secondary" href="{% url 'accounts:login' %}">Log in</a>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Log in — StudyTrack{% endblock %}
+{% block content %}
+  <section class="panel account-panel" aria-labelledby="login-heading">
+    <p class="eyebrow">Welcome back</p>
+    <h1 id="login-heading">Log in</h1>
+    <p>Use the username and password you registered with.</p>
+    {% if form.errors %}
+      <div class="form-errors" role="alert">
+        <h2>We couldn't log you in</h2>
+        <p>Check your username and password and try again.</p>
+        {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+    <form method="post" action="{% url 'accounts:login' %}">
+      {% csrf_token %}
+      {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+      {% include "includes/form_fields.html" %}
+      <button class="button" type="submit">Log in</button>
+    </form>
+    <p class="form-footer">New to StudyTrack? <a href="{% url 'accounts:register' %}">Register</a>.</p>
+  </section>
+{% endblock %}

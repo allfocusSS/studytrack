@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}StudyTrack{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{% url 'home' %}">StudyTrack</a>
+      <nav class="navigation" aria-label="Main navigation">
+        {% if user.is_authenticated %}
+          <span class="user-name">{{ user.username }}</span>
+          <form method="post" action="{% url 'accounts:logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button class="button button-secondary" type="submit">Logout</button>
+          </form>
+        {% else %}
+          <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
+          <a class="nav-link" href="{% url 'accounts:login' %}">Log in</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main class="container main-content" id="main-content" tabindex="-1">
+    {% if messages %}
+      <div class="notices">
+        {% for message in messages %}
+          <p class="notice" role="status">{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Register — StudyTrack{% endblock %}
+{% block content %}
+  <section class="panel account-panel" aria-labelledby="register-heading">
+    <p class="eyebrow">Get started</p>
+    <h1 id="register-heading">Create your account</h1>
+    <p>Choose a username and password. No email address is needed.</p>
+    {% if form.errors %}
+      <div class="form-errors" role="alert">
+        <h2>Check your details</h2>
+        <p>Please correct the errors below.</p>
+        {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+    <form method="post" action="{% url 'accounts:register' %}">
+      {% csrf_token %}
+      {% include "includes/form_fields.html" %}
+      <button class="button" type="submit">Create account</button>
+    </form>
+    <p class="form-footer">Already have an account? <a href="{% url 'accounts:login' %}">Log in</a>.</p>
+  </section>
+{% endblock %}
