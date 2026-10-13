@@ -59,6 +59,8 @@ input[aria-invalid="true"] { border-color: #b42318; }
 .assignment-details p { margin: 0; }
 .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; background: #edf2fd; font-size: .9rem; font-weight: 650; }
 .badge-completed { background: #e8f5ed; color: #23623d; }
+.badge-overdue { background: #fff5f4; color: #b42318; }
+.status-form { margin: 0; }
 .assignment-form { max-width: 680px; margin: 0 auto; overflow-wrap: anywhere; }
 .button-danger { background: #b42318; border-color: #b42318; }
 .button-danger:hover { background: #8f1c13; border-color: #8f1c13; }

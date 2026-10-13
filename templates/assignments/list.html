@@ -13,8 +13,14 @@
       <div class="assignment-details">
         <p>{% if assignment.deadline %}Deadline: {{ assignment.deadline|date:"j M Y" }}{% else %}No deadline{% endif %}</p>
         <span class="badge {% if assignment.is_completed %}badge-completed{% endif %}">{% if assignment.is_completed %}Completed{% else %}Not completed{% endif %}</span>
+        {% if assignment.is_overdue %}<span class="badge badge-overdue">Overdue</span>{% endif %}
       </div>
       <div class="actions">
+        <form method="post" action="{% url 'assignments:status' assignment.pk %}" class="status-form">
+          {% csrf_token %}
+          <input type="hidden" name="is_completed" value="{% if assignment.is_completed %}0{% else %}1{% endif %}">
+          <button class="button" type="submit">{% if assignment.is_completed %}Mark not completed{% else %}Mark completed{% endif %}</button>
+        </form>
         <a class="button button-secondary" href="{% url 'assignments:edit' assignment.pk %}">Edit</a>
         <a class="button button-secondary" href="{% url 'assignments:delete' assignment.pk %}">Delete</a>
       </div>

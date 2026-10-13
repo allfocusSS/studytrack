@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 
 
 class Assignment(models.Model):
@@ -10,6 +11,10 @@ class Assignment(models.Model):
     deadline = models.DateField(null=True, blank=True)
     is_completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def is_overdue(self):
+        return not self.is_completed and self.deadline is not None and self.deadline < timezone.localdate()
 
     def __str__(self):
         return self.title
