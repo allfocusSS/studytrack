@@ -97,7 +97,7 @@ class RegistrationTests(AccountAssertions, TestCase):
                 self.assertTrue(user.check_password(PUBLIC_PASSWORD))
                 self.assertNotContains(guidance, PUBLIC_PASSWORD)
                 login = self.client.post(reverse("accounts:login"), {"username": username, "password": PUBLIC_PASSWORD})
-                self.assertRedirects(login, "/")
+                self.assertRedirects(login, "/assignments/")
                 self.assertEqual(self.client.session["_auth_user_id"], str(user.pk))
                 self.client.post(reverse("accounts:logout"))
         self.assertEqual(User.objects.count(), 2)
@@ -190,11 +190,11 @@ class LoginTests(AccountAssertions, TestCase):
         for field in fields:
             self.assertIn(field["id"], page.labels)
 
-    def test_valid_stored_spelling_creates_session_and_redirects_home(self):
+    def test_valid_stored_spelling_creates_session_and_redirects_to_assignments(self):
         response = self.client.post(reverse("accounts:login"), {"username": "StudyUser", "password": PUBLIC_PASSWORD}, follow=True)
-        self.assertEqual(response.redirect_chain, [("/", 302)])
+        self.assertEqual(response.redirect_chain, [("/assignments/", 302)])
         self.assertEqual(self.client.session["_auth_user_id"], str(self.user.pk))
-        self.assertContains(response, "You're signed in to StudyTrack.")
+        self.assertContains(response, "My assignments")
         self.assertNotContains(response, PUBLIC_PASSWORD)
 
     def test_invalid_credentials_case_and_inactive_account_are_generic(self):
@@ -245,7 +245,7 @@ class LoginTests(AccountAssertions, TestCase):
             with self.subTest(destination=destination):
                 client = Client()
                 response = client.post(reverse("accounts:login"), {"username": "StudyUser", "password": PUBLIC_PASSWORD, "next": destination})
-                self.assertRedirects(response, "/")
+                self.assertRedirects(response, "/assignments/")
                 self.assertNotIn(PUBLIC_PASSWORD, response["Location"])
 
 
@@ -257,7 +257,7 @@ class SessionTests(AccountAssertions, TestCase):
 
     def login(self):
         response = self.client.post(reverse("accounts:login"), {"username": "StudyUser", "password": PUBLIC_PASSWORD})
-        self.assertRedirects(response, "/")
+        self.assertRedirects(response, "/assignments/")
 
     def test_protected_view_requires_login_and_accepts_authenticated_session(self):
         self.assertRedirects(self.client.get("/__account_test__/"), "/accounts/login/?next=/__account_test__/")
@@ -320,7 +320,8 @@ class PresentationTests(TestCase):
                 logout = next(form for form in ParsedPage(response).forms if form["attrs"].get("action") == "/accounts/logout/")
                 self.assertEqual(logout["attrs"]["method"], "post")
                 self.assertTrue(any(field.get("name") == "csrfmiddlewaretoken" and field.get("value") for field in logout["inputs"]))
-                self.assertNotContains(response, 'href="/assignments')
+                self.assertContains(response, 'href="/assignments/"')
+                self.assertContains(response, 'href="/assignments/new/"')
 
     def test_stored_username_is_escaped_in_signed_in_navigation_and_home(self):
         username = '<strong title="student">Unsafe</strong>'
@@ -358,7 +359,7 @@ class CsrfTests(AccountAssertions, TestCase):
         self.assertEqual(self.csrf_client.post(reverse("accounts:login"), data).status_code, 403)
         self.assert_not_authenticated(self.csrf_client)
         response = self.csrf_client.post(reverse("accounts:login"), {**data, "csrfmiddlewaretoken": self.token()})
-        self.assertRedirects(response, "/")
+        self.assertRedirects(response, "/assignments/")
         self.assertEqual(self.csrf_client.session["_auth_user_id"], str(user.pk))
 
     def test_logout_requires_csrf_and_valid_token_invalidates_session(self):

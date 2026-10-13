@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{% if object %}Edit assignment{% else %}Add assignment{% endif %} — StudyTrack{% endblock %}
+{% block content %}
+  <section class="panel assignment-form" aria-labelledby="assignment-heading">
+    <p class="eyebrow">Your study work</p>
+    <h1 id="assignment-heading">{% if object %}Edit assignment{% else %}Add assignment{% endif %}</h1>
+    {% if form.errors %}
+      <div class="form-errors" role="alert"><h2>Check your details</h2><p>Please correct the errors below.</p>{{ form.non_field_errors }}</div>
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      {% include "includes/form_fields.html" %}
+      <div class="actions">
+        <button class="button" type="submit">{% if object %}Save changes{% else %}Save assignment{% endif %}</button>
+        <a class="button button-secondary" href="{% url 'assignments:list' %}">Cancel</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}

@@ -14,6 +14,8 @@
       <a class="brand" href="{% url 'home' %}">StudyTrack</a>
       <nav class="navigation" aria-label="Main navigation">
         {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'assignments:list' %}">My assignments</a>
+          <a class="nav-link" href="{% url 'assignments:create' %}">Add assignment</a>
           <span class="user-name">{{ user.username }}</span>
           <form method="post" action="{% url 'accounts:logout' %}" class="logout-form">
             {% csrf_token %}

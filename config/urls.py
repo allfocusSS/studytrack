@@ -13,4 +13,5 @@ def home(request):
 urlpatterns = [
     path("", home, name="home"),
     path("accounts/", include("accounts.urls")),
+    path("assignments/", include("assignments.urls")),
 ]

@@ -49,6 +49,20 @@ input[aria-invalid="true"] { border-color: #b42318; }
 .skip-link { position: absolute; left: 16px; top: -100px; z-index: 10; background: white; padding: 10px; }
 .skip-link:focus { top: 12px; }
 
+.page-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.page-heading h1 { margin-bottom: 0; }
+.assignment-card { margin-bottom: 20px; overflow-wrap: anywhere; }
+.assignment-card h2 { font-size: 1.3rem; }
+.subject { color: #526075; font-weight: 650; margin: 8px 0 16px; }
+.description { white-space: pre-wrap; }
+.assignment-details { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.assignment-details p { margin: 0; }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 6px; background: #edf2fd; font-size: .9rem; font-weight: 650; }
+.badge-completed { background: #e8f5ed; color: #23623d; }
+.assignment-form { max-width: 680px; margin: 0 auto; overflow-wrap: anywhere; }
+.button-danger { background: #b42318; border-color: #b42318; }
+.button-danger:hover { background: #8f1c13; border-color: #8f1c13; }
+
 @media (max-width: 600px) {
   .container { width: calc(100% - 32px); }
   .header-inner { flex-wrap: wrap; gap: 12px; padding: 16px 0; }

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Delete assignment — StudyTrack{% endblock %}
+{% block content %}
+  <section class="panel assignment-form">
+    <p class="eyebrow">Your study work</p>
+    <h1>Delete assignment?</h1>
+    <p>Delete <strong>{{ object.title }}</strong> for <strong>{{ object.subject }}</strong>? This will remove the assignment.</p>
+    <form method="post">
+      {% csrf_token %}
+      <div class="actions">
+        <a class="button button-secondary" href="{% url 'assignments:list' %}">Cancel</a>
+        <button class="button button-danger" type="submit">Delete</button>
+      </div>
+    </form>
+  </section>
+{% endblock %}
